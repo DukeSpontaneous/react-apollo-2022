@@ -4,6 +4,8 @@
 
 За основу взяты материалы курса https://www.udemy.com/course/graphql-react-apollo/
 
+GitHub: https://github.com/EasyCoders-ru/react-apollo-2021
+
 # Задействованные пакеты
 
     npm i styled-components react-router-dom @apollo/client graphql
