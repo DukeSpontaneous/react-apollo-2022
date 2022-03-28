@@ -7,3 +7,8 @@
 # Задействованные пакеты
 
     npm i styled-components react-router-dom @apollo/client graphql
+
+# Изменения папки /public
+
+- изменил `<title>` в **index.html**
+- добавил файл **reset.css** на основе https://meyerweb.com/eric/tools/css/reset/ 
