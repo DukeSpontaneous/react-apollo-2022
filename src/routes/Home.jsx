@@ -55,20 +55,27 @@ const Movies = styled.div`
   top: -50px;
 `;
 
-const Home = () => {
+export default () => {
   const { loading, data } = useQuery(GET_MOVIES);
   return (
     <Container>
       <Header>
-        <Title>Apollo 2022</Title>
-        <Subtitle>База фильмов на React, Apollo, GraplQL</Subtitle>
+        <Title>Apollo 2021</Title>
+        <Subtitle>База фильмов на React, Apollo, GraphQL</Subtitle>
       </Header>
       {loading && <Loading>Загрузка...</Loading>}
-      {!loading &&
-        data?.movies &&
-        data.movies.map((m) => <Movie key={m.id} id={m.id}></Movie>)}
+      {!loading && data?.movies && (
+        <Movies>
+          {data.movies.map((m) => (
+            <Movie
+              key={m.id}
+              id={m.id}
+              bg={m.medium_cover_image}
+              isLiked={m.isLiked}
+            />
+          ))}
+        </Movies>
+      )}
     </Container>
   );
 };
-
-export default Home;
