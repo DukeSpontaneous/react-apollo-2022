@@ -72,7 +72,6 @@ export default () => {
               key={m.id}
               id={m.id}
               bg={m.medium_cover_image}
-              // случайно добавил параметр не на тот шаг
               isLiked={m.isLiked}
             />
           ))}
