@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
 import styled from "styled-components";
 
+// случайно добавил параметр id не на тот шаг
 const GET_MOVIE = gql`
   query getMovie($id: Int!) {
     movie(id: $id) {
@@ -11,6 +12,7 @@ const GET_MOVIE = gql`
       description_intro
       rating
       language
+      isLiked @client
     }
   }
 `;
@@ -59,7 +61,11 @@ export default () => {
   return (
     <Container>
       <Column>
-        <Title>{loading ? "Загрузка..." : `${data?.movie?.title}  `}</Title>
+        <Title>
+          {loading
+            ? "Загрузка..."
+            : `${data?.movie?.title} ${data?.movie?.isLiked ? "❤️" : "😥"}`}
+        </Title>
         <Subtitle>
           {data?.movie?.language} · {data?.movie?.rating}
         </Subtitle>
